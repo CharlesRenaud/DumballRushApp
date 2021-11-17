@@ -1,0 +1,83 @@
+@import './Base.scss';
+
+
+// Mobile Version //
+
+@media screen and (max-width: 800px) {
+    #nav-container {
+        height: 8vh;
+        width: 100%;
+        position: fixed;
+        background-color: black;
+        display: flex;
+        border-bottom-right-radius: 30px;
+        -webkit-box-shadow: 0px 5px 12px 6px rgba(0,0,0,0.45); 
+        box-shadow: 0px 5px 12px 6px rgba(0,0,0,0.45);
+        z-index: 3;
+    }
+    #burger{
+        width: 15%;
+        height: 6vh;
+        margin-top:1vh;
+        margin-left:6%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .line{
+        background-color: white;
+        height: 0.3rem;
+        width:100%;
+    } 
+  
+    
+    .nav-title{
+        margin-top:3vh;
+        margin-left: 0.7rem;
+        font-weight: bold;
+        color: white;
+    }
+    #nav-click{
+        display: flex;
+        flex-direction: row;
+        width: 70%;;
+    }
+    #nav-click:hover {
+        .nav-title{
+            transition: 0.5s;
+            color: $lightBlue !important;
+        }
+        .line{
+            transition: 0.5s;
+            background-color: $lightBlue;
+        }
+    }
+
+    #box-links{
+        position: absolute;
+        top: 8vh;
+        display: flex;
+        color: $lightBlue;
+        background-color: rgba(0, 0, 0, 0.61);
+        width: 100%;
+        height:auto;
+        visibility: hidden;
+        opacity: 0;
+        transition:visibility 0.5s linear,opacity 0.5s linear;
+        -webkit-box-shadow: 0px 5px 12px 6px rgba(0,0,0,0.45); 
+        box-shadow: 0px 5px 12px 6px rgba(0,0,0,0.45);
+    }
+    .links-list{
+        
+        padding: 0.3rem;
+        li{
+            padding : 0.3rem
+        }
+    }
+    .links-anim{
+        visibility:visible !important;
+        opacity:1 !important;    
+    }
+
+}
