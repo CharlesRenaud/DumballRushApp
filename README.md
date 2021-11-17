@@ -12,7 +12,7 @@ A visiter en version mobile pour le moment.
 - [x] Integration des variables CSS
 - [x] Smooth Scrolling
 - [x] HomePage - Background + opacity
-- [x] HomePage - Parallax Logo
+- [x] HomePage - Parallax Background
 - [ ] HomePage - Steam Button 
 - [x] HomePage - Animated Arrow Down
 
