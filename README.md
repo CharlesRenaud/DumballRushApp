@@ -5,5 +5,5 @@ A visiter en version mobile pour le moment.
 
 </br>
 
-- [ ] Navigation
+- [/] Navigation
 
