@@ -5,7 +5,7 @@ A visiter en version mobile pour le moment.
 
 
 ## Version Mobile
-
+- [x] Mise en place du serveur de test
 - [x] Navigation
 - [x] Mise en page des sections - OnePage
 - [x] Navigation - Animation liste des liens 
