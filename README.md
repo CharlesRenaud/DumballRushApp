@@ -11,8 +11,21 @@ A visiter en version mobile pour le moment.
 - [x] Navigation - Animation liste des liens 
 - [x] Integration des variables CSS
 - [x] Smooth Scrolling
-- [x] HomePage - Background + opacity
-- [x] HomePage - Parallax Background
-- [ ] HomePage - Steam Button 
-- [x] HomePage - Animated Arrow Down
+### HomePage
+- [x] Background + opacity
+- [x] Parallax Background
+- [ ] Steam Button 
+- [x] Animated Arrow Down
+- [x] Video Trailer 
+### SliderPage
+- [x] Title
+- [x] Strcuture JSX 
+- [x] Detection de swipe
+- [x] Style slider
+- [x] Animation Swipe Right
+- [x] Animation Swipe Left
+- [ ] Bouton Left
+- [ ] Bouton Right
+- [ ] Bubble list Animé
+
 
