@@ -5,12 +5,9 @@ import MyApp from './_app'
 
 
 const App = () => {
-
-
-
-
+ 
 return (  
-<div>
+<div >
   <MyApp />
 </div>
 )};

@@ -1,5 +1,6 @@
 import Nav from "./_nav"
 import Home from './_home'
+import Game from "./_game"
 import '../styles/App.scss'
 import React, {useState} from "react"
 
@@ -10,10 +11,26 @@ const MyApp = () => {
 
   const [toogleNav, setToogleNav] = useState(false)
   const [arrowToogler, setArrowToogler] = useState(false)
+  const [burgerToogle, setBurgerToogle] = useState(false)
+  const [touchStart, setTouchStart] = useState(0)
+  const [touchEnd, setTouchEnd] = useState(0)
+  const [isTouched, setIsTouched] = useState("")
+  const [sliderCount, setSliderCount] = useState(0)
+
 
   let props = {
     toogleNav: toogleNav,
     arrowToogler:arrowToogler,
+    burgerToogle: burgerToogle,
+    touchStart: touchStart,
+    touchEnd: touchEnd,
+    isTouched: isTouched,
+    sliderCount: sliderCount,
+    setSliderCount: setSliderCount,
+    setIsTouched: setIsTouched,
+    setTouchStart: setTouchStart,
+    setTouchEnd: setTouchEnd,
+    setBurgerToogle: setBurgerToogle,
     setArrowToogler:setArrowToogler,
     setToogleNav: setToogleNav,
   }
@@ -28,7 +45,7 @@ const MyApp = () => {
       </Parallax>
 
       <div style={{paddingTop:"10vh"}} id="game" className="section">
-      Game
+      <Game {...props} />
       </div>
 
       <div style={{paddingTop:"10vh"}} id="news" className="section">
