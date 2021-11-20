@@ -14,7 +14,7 @@ A visiter en version mobile pour le moment.
 ### HomePage
 - [x] Background + opacity
 - [x] Parallax Background
-- [ ] Steam Button 
+- [x] Steam Button 
 - [x] Animated Arrow Down
 - [x] Video Trailer 
 ### SliderPage
@@ -24,8 +24,8 @@ A visiter en version mobile pour le moment.
 - [x] Style slider
 - [x] Animation Swipe Right
 - [x] Animation Swipe Left
-- [ ] Bouton Left
-- [ ] Bouton Right
-- [ ] Bubble list Animé
+- [x] Bouton Left
+- [x] Bouton Right
+- [x] Bubble list Animé
 
 
