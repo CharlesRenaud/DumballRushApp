@@ -14,7 +14,7 @@ A visiter en version mobile pour le moment.
 - [x] Background opacity + animation hover de video
 - [x] Bouton acheter sur steam responsive
 - [x] Design + responsive 
-- [] Logo steam dans le bouton + lien vers le jeu sur steam
+- [ ] Logo steam dans le bouton + lien vers le jeu sur steam
 
 
 
@@ -59,7 +59,7 @@ A visiter en version mobile pour le moment.
 - [x] Ajout des img social media
 - [x] Design + color
 - [x] Formulairede contaxct
-- [] Connecter le formulaire de contact / étudier la meilleur solution
+- [ ] Connecter le formulaire de contact / étudier la meilleur solution
 
 
 
