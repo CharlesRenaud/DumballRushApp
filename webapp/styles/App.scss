@@ -2,6 +2,9 @@
 @import './Base.scss';
 @import './Home.scss';
 @import './Game.scss';
+@import './News.scss';
+@import "./Studio.scss";
+@import './Contact.scss';
 
 /* Reset CSS */
 
@@ -66,6 +69,10 @@ body{
 .section{
   width : 100%;
   height: 100vh;
+}
+
+@media screen and (min-width: 800px) {
+
 }
 
 @media screen and (max-width: 800px) {

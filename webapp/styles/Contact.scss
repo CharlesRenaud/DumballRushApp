@@ -1,0 +1,139 @@
+@import './Base.scss';
+
+@media screen and (max-width: 800px) {
+    #contact{
+        height:90vh;
+        background: url("./images/bg.png");
+        background-size:contain;
+    }
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        height: 80vh;
+
+        h1{
+            font-size: 2.5rem;
+            color: $darkBlue;
+            margin-bottom:2rem;
+            font-weight: bold;
+            letter-spacing: 0.1rem;;
+        }
+
+
+        .contact-text{
+            color: $darkPurple;
+            font-weight: bold;
+            margin-bottom:2rem;
+            margin-top:2rem;
+        }
+        .contact-text1{
+            color: $darkPurple;
+            font-weight: bold;
+            margin-bottom:2rem;
+            margin-top:0.5rem;
+
+        }
+        input{
+            background-color: $lightBlue;
+            border:none;
+            margin-bottom:0.5rem;
+            height:3vh;
+            outline: none;
+            width: 70%;
+            color:white;
+            border-radius: 15px;
+            padding:0.5rem;
+            font-weight: bold;
+            font-size: 1rem;;
+            margin-top:1.5rem;
+        }
+    
+        #story{
+            padding:0.5rem;
+            background-color: $lightBlue;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            height: 30vh;
+            outline: none;
+            font-size:1rem;
+            width:70%;
+            overflow: auto;
+
+        }
+        .send-btn{
+
+            background-color: $lightPurple; 
+            border:none;
+            border-radius:15px;
+            width: 25%;
+            height: 1.8rem;
+            font-size: 1rem;
+            font-weight: bold;
+            color:white;
+            border:2px solid $darkPurple;
+            margin-top:1rem;
+            padding:0.2rem;
+        }
+        .send-btn:hover{
+            color: $lightPurple;
+            border: 2px solid $lightPurple;
+            background-color: $darkBlue;
+
+        }
+
+        .social-box{
+            height:7vh;
+            width:80%;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom:1.5rem;
+
+        }
+        .icone{
+
+            height:100%;
+            width: 15%;
+            background-position: center !important;
+            background-size: cover !important;
+            background-size: contain !important;
+            background-repeat: no-repeat !important;
+            transition: 0.5s;
+        }
+        .icone:hover {
+            padding-bottom:0.5rem;
+            border-bottom:3px solid $blue;
+            border-radius: 5px;
+        }
+
+        #instagram{
+            background: url('./images/instagram.png')
+
+        }
+        #tiktok{
+            background: url('./images/tiktok.png')
+
+        }
+        #twitter{
+            background: url('./images/twitter.png')
+
+        }
+        #linkedin{
+            background: url('./images/linkedin.png');
+           
+        }
+        #discord{
+            background: url('./images/discord.png')
+
+        }
+        #steam{
+            background: url('./images/steam.png');
+           
+
+        }
+
+       
+    }
+}

@@ -1,0 +1,120 @@
+@import './Base.scss';
+
+@media screen and (max-width: 800px) {
+    #studio{
+        height:90vh;
+        background: url('./images/bg.png');
+        background-size: contain;
+    }
+    .studio-container{
+
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        position: relative;
+        
+
+        h1{
+            font-size: 2.5rem;
+            color: $darkBlue;
+            font-weight: bold;
+            letter-spacing: 0.1rem;;
+
+        }
+        .studio-description{
+            text-align: justify;
+            letter-spacing: 0.02rem;
+            background-color: $lightBlue;
+            color: white;
+            line-height: 1.3rem;;
+            border-top:2px solid $darkPurple;
+            padding-top:1rem;
+            overflow: auto;
+            
+        }
+
+    }
+    .studio-logo{
+        background: url("./images/logocorp.png");
+        height:25vh;
+        width: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+
+    }
+    .studio-display{
+        display: flex;
+        flex-direction: column;
+        background-color: $lightBlue;
+        width: 70%;
+        margin-top:1.5rem;
+        padding: 1rem;;
+        height: 65vh;
+        border-radius: 30px;
+        -webkit-box-shadow: 0px 0px 21px -5px #000000; 
+        box-shadow: 0px 0px 21px -5px #000000;
+    }
+    .arrow-iconess{
+        position: absolute;
+        bottom: -10%;
+        display: flex;
+        width: 16.7%;
+
+
+        
+        
+.left-bar {
+    position: absolute;
+    background-color: transparent;
+    top: 0;
+    left:0;
+    width: 35px;
+    height: 5px;
+    display: block;
+    transform: rotate(35deg);
+    float: right;
+    border-radius: 2px;
+    &:after {
+      content:"";
+      background-color: white;
+      width: 35px;
+      height: 5px;
+      display: block;
+      float: right;
+      border-radius: 6px 10px 10px 6px;
+      transition: all $duration $easing;
+      z-index: -1;
+    }
+  }
+  
+  .right-bar {
+    position: absolute;
+    background-color: transparent;
+    top: 0px;
+    left:26px;
+    width: 35px;
+    height: 5px;
+    display: block;
+    transform: rotate(-35deg);
+    float: right;
+    border-radius: 2px;
+    &:after {
+      content:"";
+      background-color: white;
+      width: 35px;
+      height: 5px;
+      display: block;
+      float: right;
+      border-radius: 10px 6px 6px 10px;
+      transition: all $duration $easing;
+      z-index: -1;
+    }
+  }
+  
+    }
+
+}

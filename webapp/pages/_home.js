@@ -1,5 +1,4 @@
 import react, {useEffect} from 'react'
-import background from "../styles/images/background.png"
 
 
 const Home = (props) => {
@@ -8,7 +7,7 @@ const Home = (props) => {
         console.log(props)
         const interval = setInterval(() => {
             props.setArrowToogler(false)
-        }, 1000);
+        }, 600);
         return () => clearInterval(interval);
       }, [props.arrowToogler]);
       
@@ -34,7 +33,7 @@ const Home = (props) => {
             <div className="home-container">
                 <div className="logo"></div>
                 <iframe className="ytb-lecteur" src="https://www.youtube.com/embed/yMk6dIFqSOU" allowFullScreen></iframe>
-                <div className="steam-achat">Acheter sur Steam</div>
+                <div className="steam-achat">Acheter sur Steam </div>
                 <a onClick={()=>toogler()} className={"arrow-icon " + (props.arrowToogler ?  "open" : "" ) }>
                     <span className="left-bar"></span>
                     <span className="right-bar"></span>

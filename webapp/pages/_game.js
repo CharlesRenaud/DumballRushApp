@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import bg from '../styles/images/bg.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowCircleLeft, faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
@@ -20,7 +20,7 @@ const Game = (props) => {
         console.log("hola")
 
 
-        if (props.touchStart - props.touchEnd > 150 || tag ==='left') {
+        if (props.touchStart - props.touchEnd > 100 || tag ==='left') {
             // do your stuff here for left swipe
             console.log('hpola')
             console.log(props.sliderCount)
@@ -43,7 +43,7 @@ const Game = (props) => {
 
         }
 
-        if (props.touchStart - props.touchEnd < -150 || tag === 'right') {
+        if (props.touchStart - props.touchEnd < -100 || tag === 'right') {
             // do your stuff here for right swipe
             if(props.sliderCount === 0){
                 props.setIsTouched('right')
@@ -61,6 +61,22 @@ const Game = (props) => {
                 console.log(props.sliderCount)
             }
 
+        }
+    
+    }
+
+   const tooglerz = () => {
+      if(!props.arrowToogler){
+          props.setArrowToogler(true)
+          const element = document.querySelector('#news')
+          const topPos = element.getBoundingClientRect().top + window.pageYOffset
+            window.scrollTo({
+            top: topPos, // scroll so that the element is at the top of the view
+            behavior: 'smooth' // smooth scroll
+            })
+        }
+        else{
+            props.setArrowToogler(false)
         }
     }
 
@@ -130,8 +146,11 @@ const Game = (props) => {
                 <div className="go-right" onClick={()=>handleTouchEnd('right')}>
                     <FontAwesomeIcon style={{color: "#3d2156"}} icon={faArrowCircleRight}  />
                      </div>
-
             </div>
+                <a onClick={()=>tooglerz()} className={"arrow-icone " + (props.arrowToogler ?  "open" : "" ) }>
+                    <span className="left-bar"></span>
+                    <span className="right-bar"></span>
+                </a>
             
 
         </div>

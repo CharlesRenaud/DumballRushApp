@@ -6,6 +6,9 @@ import React, {useState} from "react"
 
 import background from "../styles/images/background.png"
 import { Parallax } from "react-parallax"
+import News from "./_news"
+import Studio from "./_studio"
+import Contact from "./_contact"
 
 const MyApp = () => {
 
@@ -40,23 +43,23 @@ const MyApp = () => {
     <div className="App">
       <Nav {...props} />
 
-      <Parallax id="home" bgImage={background.src}strength={200} className="section">
-        <Home {...props} />
+      <Parallax id="home" bgImage={background.src}strength={300} className="section">
+          <Home {...props} />
       </Parallax>
 
       <div style={{paddingTop:"10vh"}} id="game" className="section">
-      <Game {...props} />
+        <Game {...props} />
       </div>
 
       <div style={{paddingTop:"10vh"}} id="news" className="section">
-      News
+        <News {...props} />
       </div>
       <div style={{paddingTop:"10vh"}} id="studio" className="section">
-      Studio
+        <Studio {...props} />
       </div>
 
       <div style={{paddingTop:"10vh"}} id="contact" className="section">
-      Contact
+        <Contact {...props} />
       </div>
 
     </div>

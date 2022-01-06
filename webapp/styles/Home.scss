@@ -1,5 +1,65 @@
 @import './Base.scss';
 
+// Desktop //
+@media screen and (min-width: 800px) {
+
+    .home-container {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      justify-content: center;
+      align-items:center;
+      flex-direction: column;
+      position: relative;
+
+      .logo{
+      display: none;
+      }
+
+      .ytb-lecteur{
+        height: 57%;
+        width: 60%;
+        box-shadow: 0 0 0 1000px rgba(0,0,0,.25);
+        border:15px solid $lightBlue;
+        border-radius: 10px;
+        -webkit-transition: 0.5s;
+
+      }
+      .ytb-lecteur:hover{
+        border: 15px solid $lightPurple;
+        transition: 0.5s;
+        box-shadow: 0 0 0 1000px rgba(0,0,0,.50);
+
+      }
+
+      .steam-achat{
+        display: flex;
+        width: auto;
+        justify-content: center;
+        color : $darkBlue;
+        background-color: $lightBlue;
+        border-radius: 30px;
+        padding : 1rem;
+        border: 2px solid $lightBlue;
+        font-weight: bold;
+        -webkit-transition: 0.5s;
+        margin-top:2rem;
+        z-index: 1;
+        font-size: 1.3rem;;
+        letter-spacing: 0.05rem;
+
+
+      }
+      .steam-achat:hover{
+        border: 2px solid $lightPink;
+        cursor: pointer;
+        color: $lightPink;
+        background-color: $darkPurple;
+        transition: 0.5s;
+      }
+    }
+  }
+
 @media screen and (max-width: 800px) {
 
     .home-container{
