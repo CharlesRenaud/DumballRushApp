@@ -5,21 +5,15 @@ A visiter en version mobile pour le moment.
 
 
 ## Version Desktop
-
--[x] Mise en place des mediaqueryes a min:800px (responsive design)
--[x] Modification de la navigation. Sans le burger menu.
--[x] Ajout des images social media dans la bar de navigation
--[x] design et responsive
+- [x] Mise en place des mediaqueryes a min:800px (responsive design)
+- [x] Modification de la navigation. Sans le burger menu.
+- [x] Ajout des images social media dans la bar de navigation
+- [x] design et responsive
 ### HomePage
 - [x] Background opacity + animation hover de video
 - [x] Bouton acheter sur steam responsive
 - [x] Design + responsive 
 - [ ] Logo steam dans le bouton + lien vers le jeu sur steam
-
-
-
-
-
 
 
 ## Version Mobile
