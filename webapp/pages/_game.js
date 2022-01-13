@@ -1,9 +1,12 @@
-import React,{useEffect} from 'react';
+import React,{useEffect, useState} from 'react';
 import bg from '../styles/images/bg.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowCircleLeft, faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 const Game = (props) => {
+
+    const [tester, setTester] = useState('initial')
+    const [direction, setDirection] = useState('')
 
 
     function handleTouchStart(e) {
@@ -15,55 +18,120 @@ const Game = (props) => {
     }
 
 
-
-    function handleTouchEnd(tag) {
-        console.log("hola")
+    const handleDirection = (tag) => {
 
 
-        if (props.touchStart - props.touchEnd > 100 || tag ==='left') {
-            // do your stuff here for left swipe
-            console.log('hpola')
-            console.log(props.sliderCount)
-
-            if(props.sliderCount === 0){
-                props.setIsTouched('left')
-                props.setSliderCount(props.sliderCount + 1)
-                console.log(props.sliderCount + "left")
+        if(props.touchStart - props.touchEnd > 100 || tag === "left"){
+            if(direction === "left"){
+                setDirection("left1")
+            }else if(direction == "left1"){
+                setDirection("initialL")
             }
-            else if(props.sliderCount === 1 ){
-                props.setIsTouched('left1')
-                props.setSliderCount(props.sliderCount + 1)
-                console.log(props.sliderCount + "left")
+            else{
+                setDirection("left")
             }
-            else if(props.sliderCount === 2 ){
-                props.setIsTouched('')
-                props.setSliderCount(0)
-                console.log(props.sliderCount + "left")
-            }
-
         }
-
-        if (props.touchStart - props.touchEnd < -100 || tag === 'right') {
-            // do your stuff here for right swipe
-            if(props.sliderCount === 0){
-                props.setIsTouched('right')
-                props.setSliderCount(props.sliderCount + 1)
-                console.log(props.sliderCount)
+        else if(props.touchStart - props.touchEnd < -100 || tag === "right"){
+            if(direction === "right"){
+                setDirection("right1")
+            }else if(direction == "right1"){
+                setDirection("initialR")
             }
-            else if(props.sliderCount === 1 ){
-                props.setIsTouched('right1')
-                props.setSliderCount(props.sliderCount + 1)
-                console.log(props.sliderCount)
+            else{
+                setDirection("right")
             }
-            else if(props.sliderCount === 2 ){
-                props.setIsTouched('')
-                props.setSliderCount(0)
-                console.log(props.sliderCount)
-            }
-
         }
-    
     }
+
+
+    useEffect(() => {
+        if(direction !== ""){
+            if((direction === "left") || (direction === "left1") || (direction === "initialL")) {
+                console.log(direction)
+                console.log("lefting", tester)
+
+                if(props.sliderCount === 0){
+                    if((tester === "initial") || (tester === "initialL") || (tester === "left") || (tester === "left1")){
+                        props.setIsTouched('left')
+                        props.setSliderCount(1)
+                    }
+                }
+                else if(props.sliderCount === 1 ){
+                    if((tester === "left") || (tester === "left1") || (tester === "initialL")){
+                        props.setIsTouched('left1')
+                        props.setSliderCount(2)
+                    }
+                    else if((tester === "right") || (tester === "right1") || (tester === "initialR")){
+                        console.log("pd")
+                        props.setIsTouched("right")
+                        props.setSliderCount(2)
+                    }
+                }
+                else if(props.sliderCount === 2 ){
+                    if((tester === "left") || (tester === "left1") || (tester === "initialL")){
+                        props.setIsTouched("")
+                        props.setSliderCount(0)
+                        
+                    }
+                    else if((tester === "right") || (tester === "right1") || (tester === "initialR") ){
+                        console.log("pd")
+                        props.setIsTouched("")
+                        props.setSliderCount(0)
+                    }
+                }
+            }
+
+            if((direction === "right") || (direction === "right1") || (direction === "initialR")) {
+                console.log(direction)
+                console.log("righting", tester)
+
+                if(props.sliderCount === 0){
+                    if((tester === "initial") || (tester === "initialR") || (tester === "right") || (tester === "right1")){
+                        props.setIsTouched('right')
+                        props.setSliderCount(2)
+                    }
+                    else if((tester === "left") || (tester === "left1")){
+                        console.log("pda")
+                        props.setIsTouched("right")
+                        props.setSliderCount(2)
+                    }
+                }
+                else if(props.sliderCount === 1 ){
+                    if((tester === "right") || (tester === "right1") || (tester === "initialR")){
+                        props.setIsTouched('')
+                        props.setSliderCount(0)
+                    }
+                    else if((tester === "left") || (tester === "left1") || (tester === "initialL") ){
+                        console.log("pd")
+                        props.setIsTouched("")
+                        props.setSliderCount(0)
+                    }
+                    else if(tester === "initialL"){
+                        props.setIsTouched("")
+                        props.setSliderCount(0)
+                    }
+                }
+                else if(props.sliderCount === 2 ){
+                    if((tester === "right") || (tester === "right1") || (tester === "initialR")){
+                        props.setIsTouched("left")
+                        props.setSliderCount(1)
+                    }
+                    else if((tester === "left") || (tester === "left1") || (tester === "initialL")){
+                        console.log("oo")
+                        props.setIsTouched("left")
+                        props.setSliderCount(1)
+                    }
+                } 
+            }
+            
+        setTester(direction)
+        }
+}, [direction])
+
+
+
+
+
 
    const tooglerz = () => {
       if(!props.arrowToogler){
@@ -80,16 +148,24 @@ const Game = (props) => {
         }
     }
 
+    let titledisplayed = "title-hide";
+    let animatedBox = "box-hide"
+
+    if(props.offset > 150 && props.offset < 1500) {
+        titledisplayed = "title-display ";
+        animatedBox = "animated-box ";        
+    }
+
     return (
         <div className="game-container">
-            <h1>Game</h1>
+            <h1 className={titledisplayed}>Game : <span>découvre dumball ! </span></h1>
 
             <div className={"game-slider " + (props.isTouched === 'right' ? "right-check " : '') + (props.isTouched === 'left' ? "left-check" : '') + (props.isTouched === 'right1' ? "right1-check " : '') + (props.isTouched === 'left1' ? "left1-check" : '') } 
             onTouchStart={(e)=>handleTouchStart(e)} 
             onTouchMove={(e)=>handleTouchMove(e)} 
-            onTouchEnd={()=>handleTouchEnd()}>
+            onTouchEnd={()=>handleDirection()}>
 
-                <div id="box1" className={"game-box " + (props.isTouched === "" ? "is-out" : '') + (props.isTouched === "right" ? "is-out" : '') + (props.isTouched === "left1" ? "is-out" : '') }>
+                <div id="box1" className={ animatedBox +  "game-box "  + (props.isTouched === "" ? "is-out" : '') + (props.isTouched === "right" ? "is-out" : '') + (props.isTouched === "left1" ? "is-out" : '') }>
                     <div id='img1' className="game-image"></div>
                     <div className="game-description">
                     <h2>Title 1</h2>
@@ -102,7 +178,7 @@ const Game = (props) => {
                         </p>
                     </div>
                 </div>
-                <div id="box2" className={"game-box " + (props.isTouched !== "" ? "is-out" : '')}>
+                <div id="box2" className={animatedBox + "game-box " + (props.isTouched !== "" ? "is-out" : '')}>
                     <div id="img2" className="game-image"></div>
                     <div className="game-description">
                         <h2>Title 2</h2>
@@ -115,7 +191,7 @@ const Game = (props) => {
                         </p>
                     </div>
                 </div>
-                <div id="box3" className={"game-box " + (props.isTouched === "" ? "is-out" : '') + (props.isTouched === "left" ? "is-out" : '') + (props.isTouched === "right1" ? "is-out" : '') }>
+                <div id="box3" className={animatedBox + "game-box " + (props.isTouched === "" ? "is-out" : '') + (props.isTouched === "left" ? "is-out" : '') + (props.isTouched === "right1" ? "is-out" : '') }>
                     <div id="img3" className="game-image"></div>
                     <div className="game-description">
                         <h2>Title 3</h2>
@@ -130,7 +206,7 @@ const Game = (props) => {
                 </div>
             </div>
             <div className="control-box">
-                <div className="go-left" onClick={()=>handleTouchEnd('left')}> 
+                <div className="go-left" onClick={()=>handleDirection('left')}> 
                     <FontAwesomeIcon style={{color: "#3d2156"}} icon={faArrowCircleLeft}  />
                 </div>
                 <div className="bubble-list">
@@ -138,12 +214,16 @@ const Game = (props) => {
                  + (props.sliderCount === 2 && props.isTouched==="right1" ? "bubble-color" : "") } ></div>
                     <div className={"bubble " + (props.sliderCount === 0 ? "bubble-color" : "")}></div>
                     <div className={"bubble " 
-                    + (props.isTouched === "right" && props.sliderCount === 1 ? "bubble-color" : "") 
-                    + (props.sliderCount === 2 && props.isTouched==="left1" ? "bubble-color" : "") } 
+                    + (props.isTouched === "right" && props.sliderCount === 1 ? "bubble-color" : "")
+                    + (props.isTouched === "right" && props.sliderCount === 2 ? "bubble-color" : "")
+                    + (props.sliderCount === 2 && props.isTouched==="left1" ? "bubble-color" : "")
+                    + (props.sliderCount === 1 && props.isTouched==="left1" ? "bubble-color" : "") 
+                } 
+
                     >
                     </div>
                 </div>
-                <div className="go-right" onClick={()=>handleTouchEnd('right')}>
+                <div className="go-right" onClick={()=>handleDirection('right')}>
                     <FontAwesomeIcon style={{color: "#3d2156"}} icon={faArrowCircleRight}  />
                      </div>
             </div>

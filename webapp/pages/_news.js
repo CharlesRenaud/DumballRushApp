@@ -21,7 +21,7 @@ const News = (props) => {
         <div className="news-container">
             <h1>News</h1>
             <div className="news-embed">
-            <a className="twitter-timeline" href="https://twitter.com/DumballRush?ref_src=twsrc%5Etfw">Tweets by DumballRush</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>    
+            <a className="twitter-timeline" href="https://twitter.com/DumballRush?ref_src=twsrc%5Etfw">Tweets by DumballRush</a> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>    
             </div>  
             <a onClick={()=>tooglerz()} className={"arrow-icones " + (props.arrowToogler ?  "open" : "" ) }>
                     <span className="left-bar"></span>

@@ -2,7 +2,7 @@ import Nav from "./_nav"
 import Home from './_home'
 import Game from "./_game"
 import '../styles/App.scss'
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 
 import background from "../styles/images/background.png"
 import { Parallax } from "react-parallax"
@@ -19,6 +19,8 @@ const MyApp = () => {
   const [touchEnd, setTouchEnd] = useState(0)
   const [isTouched, setIsTouched] = useState("")
   const [sliderCount, setSliderCount] = useState(0)
+  const [titleAnimationLaunch, setTitleAnimationLaunch] = useState(false) 
+  const [offset, setOffset] = useState(0);
 
 
   let props = {
@@ -29,6 +31,10 @@ const MyApp = () => {
     touchEnd: touchEnd,
     isTouched: isTouched,
     sliderCount: sliderCount,
+    titleAnimationLaunch: titleAnimationLaunch,
+    offset: offset,
+    setOffset: setOffset,
+    setTitleAnimationLaunch: setTitleAnimationLaunch,
     setSliderCount: setSliderCount,
     setIsTouched: setIsTouched,
     setTouchStart: setTouchStart,
@@ -37,6 +43,17 @@ const MyApp = () => {
     setArrowToogler:setArrowToogler,
     setToogleNav: setToogleNav,
   }
+
+
+  useEffect(() => {
+      const onScroll = () => setOffset(window.pageYOffset);
+      // clean up code
+      window.removeEventListener('scroll', onScroll);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  console.log(offset); 
 
 
   return(

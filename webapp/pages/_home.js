@@ -1,5 +1,7 @@
 import react, {useEffect} from 'react'
+import Image from 'next/image'
 
+import steam from "../styles/images/steam.png"
 
 const Home = (props) => {
 
@@ -7,7 +9,7 @@ const Home = (props) => {
         console.log(props)
         const interval = setInterval(() => {
             props.setArrowToogler(false)
-        }, 600);
+        }, 1000);
         return () => clearInterval(interval);
       }, [props.arrowToogler]);
       
@@ -21,7 +23,10 @@ const Home = (props) => {
             top: topPos, // scroll so that the element is at the top of the view
             behavior: 'smooth' // smooth scroll
             })
+          props.setTitleAnimationLaunch(true);
+          console.log(props.titleAnimationLaunch)  
         }
+
         else{
             props.setArrowToogler(false)
         }
@@ -33,7 +38,7 @@ const Home = (props) => {
             <div className="home-container">
                 <div className="logo"></div>
                 <iframe className="ytb-lecteur" src="https://www.youtube.com/embed/yMk6dIFqSOU" allowFullScreen></iframe>
-                <div className="steam-achat">Acheter sur Steam </div>
+                <a href="#" className="steam-achat"> <p style={{marginRight:"20px"}}>Acheter sur steam</p><Image width={50} height={50} alt="logo-steam" className='logo-steam' src={steam} /></a>
                 <a onClick={()=>toogler()} className={"arrow-icon " + (props.arrowToogler ?  "open" : "" ) }>
                     <span className="left-bar"></span>
                     <span className="right-bar"></span>
