@@ -19,7 +19,7 @@ const Contact = () => {
             <textarea id="story" placeholder="Write some Crazy Things" name="story" rows="5" cols="33">
             </textarea>  
             <button className="send-btn">Send</button>      
-</div>
+        </div>
     );
 };
 

@@ -62,7 +62,6 @@ const Game = (props) => {
                         props.setSliderCount(2)
                     }
                     else if((tester === "right") || (tester === "right1") || (tester === "initialR")){
-                        console.log("pd")
                         props.setIsTouched("right")
                         props.setSliderCount(2)
                     }
@@ -74,7 +73,6 @@ const Game = (props) => {
                         
                     }
                     else if((tester === "right") || (tester === "right1") || (tester === "initialR") ){
-                        console.log("pd")
                         props.setIsTouched("")
                         props.setSliderCount(0)
                     }
@@ -91,7 +89,6 @@ const Game = (props) => {
                         props.setSliderCount(2)
                     }
                     else if((tester === "left") || (tester === "left1")){
-                        console.log("pda")
                         props.setIsTouched("right")
                         props.setSliderCount(2)
                     }
@@ -102,7 +99,6 @@ const Game = (props) => {
                         props.setSliderCount(0)
                     }
                     else if((tester === "left") || (tester === "left1") || (tester === "initialL") ){
-                        console.log("pd")
                         props.setIsTouched("")
                         props.setSliderCount(0)
                     }
@@ -117,7 +113,6 @@ const Game = (props) => {
                         props.setSliderCount(1)
                     }
                     else if((tester === "left") || (tester === "left1") || (tester === "initialL")){
-                        console.log("oo")
                         props.setIsTouched("left")
                         props.setSliderCount(1)
                     }
@@ -127,11 +122,6 @@ const Game = (props) => {
         setTester(direction)
         }
 }, [direction])
-
-
-
-
-
 
    const tooglerz = () => {
       if(!props.arrowToogler){
@@ -151,7 +141,7 @@ const Game = (props) => {
     let titledisplayed = "title-hide";
     let animatedBox = "box-hide"
 
-    if(props.offset > 150 && props.offset < 1500) {
+    if(props.offset > 150 && props.offset < 1800) {
         titledisplayed = "title-display ";
         animatedBox = "animated-box ";        
     }

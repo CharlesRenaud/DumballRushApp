@@ -155,14 +155,24 @@
 
     .steam-achat{
         display: flex;
-        width: 50%;
+        width: auto;
         justify-content: center;
+        align-items: center;
         color : $darkBlue;
         background-color: $lightBlue;
         border-radius: 30px;
-        padding : 1rem;
+        padding : 0.2rem;
         border: 2px solid $lightBlue;
         font-weight: bold;
+        text-decoration: none;
+        padding-left:0.5rem;
+        font-size: 1.1rem;
+        span{
+          
+        }
+        .logo-steam{
+          display: flex !important;
+        }
     }
     .steam-achat:hover{
         border: 2px solid $lightPink;

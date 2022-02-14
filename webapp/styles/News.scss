@@ -1,7 +1,118 @@
+@media screen and (min-width: 800px) {
+  #news{
+    height:90vh;
+    width: 100%;
+}
+.news-container{
+    height:100%;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: top;
+    flex-direction: column;
+    justify-items: top;
+    align-items: center;
+    position: relative;
+    h1{
+      font-size: 3.5rem;
+      color: $darkBlue;
+        height: 10%;
+        letter-spacing: 0.1rem;
+        font-weight: bold;
+        top:-10vh !important;
+        opacity:0 !important;
+        position: relative;
+        transition:  1.2s;
+
+        span{
+          font-size: 3rem;
+          opacity: 0.95;
+          letter-spacing: 0;
+        }
+    }
+    .news-embed{
+        height: 72%;
+        width:40%;
+        overflow: auto;
+        -webkit-box-shadow: 0px 0px 18px 0px #000000; 
+        box-shadow: 0px 0px 18px 0px #000000;
+        border:0.7rem solid $lightBlue;
+        border-radius: 10px;    
+        opacity: 0 !important;  
+        position: relative;
+        top:5vh; 
+
+
+    }
+    .news-embed:hover{
+      border-color: $lightPurple;
+
+    }
+    .title-display{
+      opacity:1 !important;
+      top:4vh !important
+    }
+    .animated-embed{
+      opacity:1 !important;
+      transition-delay: 0.3s;
+      transition: ease-in 0.5s !important;
+    }
+    
+}
+
+
+
+.arrow-iconess {
+  position: absolute !important;
+  bottom: 5% !important;
+  left:48.1% !important;
+  cursor: pointer;
+
+  .left-bar{
+
+    &:after {
+      transition: 0.5s ease-in-out!important;
+      background-color:  $blue !important;
+
+  }
+}
+  .right-bar{
+    &:after {
+      transition: 0.5s ease-in-out !important;
+      background-color:  $blue !important;
+
+  }
+}
+
+
+}
+.arrow-iconess:hover {
+    cursor: pointer !important;
+
+  .left-bar{
+    &:after {
+      background-color:  $purple !important;
+      transition: 0.5s !important;
+
+  }
+}
+  .right-bar{
+
+    &:after {
+      background-color:  $purple !important;
+      transition: 0.5s !important;
+  }
+}
+
+
+
+}
+
+}
+
 @media screen and (max-width: 800px) {
     #news{
         height:90vh;
-        background: url("./images/bg.png");
         background-size:contain;
     }
     .news-container{
@@ -19,6 +130,9 @@
             height: 10%;
             letter-spacing: 0.1rem;
             font-weight: bold;
+            span{
+              display: none;
+            }
         }
         .news-embed{
             height: 90%;

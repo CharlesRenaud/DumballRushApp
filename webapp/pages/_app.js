@@ -10,6 +10,7 @@ import News from "./_news"
 import Studio from "./_studio"
 import Contact from "./_contact"
 
+import backgroundCover from "../styles/images/bg.png"
 const MyApp = () => {
 
   const [toogleNav, setToogleNav] = useState(false)
@@ -55,30 +56,33 @@ const MyApp = () => {
 
   console.log(offset); 
 
+  var styleTest ={  
+    backgroundImage: "url(" + backgroundCover.src + ")",
+    backgroundPosition: 'center',
+    backgroundSize: 'contain',
+    backgroundRepeat: 'repeat-y'
+  }
 
   return(
     <div className="App">
       <Nav {...props} />
-
-      <Parallax id="home" bgImage={background.src}strength={300} className="section">
-          <Home {...props} />
-      </Parallax>
-
-      <div style={{paddingTop:"10vh"}} id="game" className="section">
-        <Game {...props} />
+      <div style={ styleTest } className="bg-cover">
+        <Parallax id="home" bgImage={background.src}strength={300} className="section">
+            <Home {...props} />
+        </Parallax>
+        <div style={{paddingTop:"10vh"}} id="game" className="section">
+          <Game {...props} />
+        </div>
+        <div style={{paddingTop:"10vh"}} id="news" className="section">
+          <News {...props} />
+        </div>
+        <div style={{paddingTop:"10vh"}} id="studio" className="section">
+          <Studio {...props} />
+        </div>
+        <div style={{paddingTop:"10vh"}} id="contact" className="section">
+          <Contact {...props} />
+        </div>
       </div>
-
-      <div style={{paddingTop:"10vh"}} id="news" className="section">
-        <News {...props} />
-      </div>
-      <div style={{paddingTop:"10vh"}} id="studio" className="section">
-        <Studio {...props} />
-      </div>
-
-      <div style={{paddingTop:"10vh"}} id="contact" className="section">
-        <Contact {...props} />
-      </div>
-
     </div>
   )
 }

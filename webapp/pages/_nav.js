@@ -15,10 +15,7 @@ const Nav = (props) => {
         }else{
             props.setToogleNav(false)
             burgerToogle()
-
         }
-
-
     }
 
     const burgerToogle = () => {
